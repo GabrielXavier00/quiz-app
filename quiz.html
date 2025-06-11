@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz: Jornada do Gestor de TI</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1 class="quiz-title">Desafios do Gestor de TI</h1>
+    <img id="question-image" src="" alt="Imagem do Cenário" class="question-image" style="display:none;">
+    <div id="question-text" class="question-text"></div>
+    <div id="options-container" class="options-container">
+      <!-- Opções de resposta serão carregadas aqui pelo JS -->
+    </div>
+    <div id="result-message" class="result-message" style="display:none;">
+      <p id="consequence-text"></p>
+      <p id="company-message"></p>
+      <button id="restart-btn" class="restart-btn" style="display:none;" onclick="location.reload()">Reiniciar Jornada</button>
+      <button id="back-home-btn" class="back-home-btn" style="display:none;" onclick="location.href='home.html'">Voltar para o Início</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

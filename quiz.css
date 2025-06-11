@@ -1,0 +1,195 @@
+/* Reset básico e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Usando a fonte Inter, ou uma genérica */
+  background-color: #1a202c; /* Fundo escuro para a página */
+  color: #fff; /* Cor do texto padrão */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  min-height: 100vh; /* Altura mínima de 100% da viewport */
+  padding: 1rem; /* Preenchimento em torno do corpo */
+}
+
+/* Container principal do quiz */
+.quiz-container {
+  background-color: #2d3748; /* Cor de fundo do contêiner do quiz */
+  border-radius: 1rem; /* Bordas arredondadas */
+  padding: 2rem; /* Preenchimento interno */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra para profundidade */
+  text-align: center; /* Centraliza o texto */
+  max-width: 768px; /* Largura máxima para o quiz em telas maiores */
+  width: 100%; /* Ocupa toda a largura disponível */
+  border: 1px solid #4a5568; /* Borda sutil */
+}
+
+/* Título do quiz */
+.quiz-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #60a5fa; /* Cor azul clara para o título */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para o texto do título */
+}
+
+/* Imagem da questão */
+.question-image {
+  width: 100%; /* Ocupa toda a largura do container */
+  max-height: 250px; /* Altura máxima para a imagem */
+  object-fit: cover; /* Ajusta a imagem para cobrir a área */
+  border-radius: 0.75rem; /* Bordas arredondadas para a imagem */
+  margin-bottom: 1.5rem;
+  border: 2px solid #4a5568; /* Borda da imagem */
+}
+
+/* Texto da questão */
+.question-text {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.5; /* Espaçamento entre linhas */
+  color: #e2e8f0; /* Cor do texto da questão */
+}
+
+/* Container das opções de resposta (botões) */
+.options-container {
+  display: flex;
+  flex-direction: column; /* Botões empilhados verticalmente */
+  gap: 1rem; /* Espaçamento entre os botões */
+  margin-top: 1.5rem;
+}
+
+/* Estilos para os botões de opção */
+.option-btn {
+  background-color: #4299e1; /* Azul vibrante */
+  color: #fff; /* Texto branco */
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem; /* Bordas arredondadas */
+  cursor: pointer; /* Indica que é clicável */
+  transition: all 0.3s ease; /* Transição suave para efeitos de hover/active */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.option-btn:hover {
+  background-color: #3182ce; /* Azul mais escuro no hover */
+  transform: translateY(-3px); /* Leve elevação no hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+
+.option-btn:active {
+  transform: translateY(0); /* Retorna à posição original ao clicar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra menor ao clicar */
+}
+
+/* Mensagem de resultado (exibida no final do quiz) */
+.result-message {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.result-message p {
+  margin-bottom: 1rem;
+}
+
+.result-message .company-message {
+  font-weight: 600; /* Texto mais encorpado para a mensagem da empresa */
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória */
+  padding-top: 1rem;
+  text-align: left; /* Alinha o texto da empresa à esquerda */
+}
+
+/* Estilos para resultados negativos */
+.result-message.negative {
+  background-color: #e53e3e; /* Vermelho para resultados negativos */
+  border: 2px solid #c53030; /* Borda mais escura */
+}
+
+/* Estilos para resultados positivos */
+.result-message.positive {
+  background-color: #48bb78; /* Verde para resultados positivos */
+  border: 2px solid #38a169; /* Borda mais escura */
+}
+
+/* Botões de ação pós-resultado (reiniciar/voltar) */
+.restart-btn, .back-home-btn {
+  background-color: #60a5fa; /* Azul claro */
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-right: 0.5rem; /* Espaçamento entre os botões */
+}
+
+.restart-btn:hover, .back-home-btn:hover {
+  background-color: #3b82f6; /* Azul mais escuro no hover */
+  transform: scale(1.02); /* Leve aumento de tamanho */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .quiz-title {
+    font-size: 1.75rem;
+  }
+  .question-text {
+    font-size: 1.1rem;
+  }
+  .option-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .result-message {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .restart-btn, .back-home-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .question-image {
+    max-height: 180px;
+    margin-bottom: 1rem;
+  }
+  .question-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .options-container {
+    gap: 0.8rem;
+  }
+  .option-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+  .result-message {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  .restart-btn, .back-home-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+}
